@@ -14,15 +14,19 @@ public class LargestNumber {
 		return secondHighest;
 	}
 
-	public int findLargestNumberWithoutSort(List<Integer> numberList) {
+	public void findLargestNumberWithoutSort(List<Integer> numberList) {
 		int largest = numberList.get(0);
+		int lastNum=0;
 		for (int i = 0; i < numberList.size(); i++) {
-			if (largest < numberList.get(i))
+			if (largest < numberList.get(i)) {
+				lastNum=largest;
 				largest = numberList.get(i);
-
+			}
+			
 		}
-
-		return largest;
+		System.out.println("Largest without Sorting: "+largest);
+		System.out.println("2nd Largest without Sorting: "+lastNum);
+		
 	}
 
 }
