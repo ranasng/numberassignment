@@ -10,7 +10,7 @@ public class Assignment {
 		LargestNumber ln = new LargestNumber();
 		int largestNUmber = ln.findLargestNumber(numberList);
 		System.out.println("List of number :" + numberList);
-		System.out.println("************" );
+		System.out.println("================================================" );
 		System.out.println("Larges Number is :" + largestNUmber);
 		System.out.println("================================================" );
 		int secondLargest=ln.find2ndLargestNumber(numberList);
