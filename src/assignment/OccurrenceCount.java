@@ -2,6 +2,9 @@ package assignment;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class OccurrenceCount {
 
@@ -44,6 +47,23 @@ public class OccurrenceCount {
 		return value;
 	}
 
-	
+	public Set<String> frequentWord(Map<String, Integer> occurenceMap) {
+		Set<Map.Entry<String, Integer>> entrtSet = occurenceMap.entrySet();
+		int maxValue = entrtSet.iterator().next().getValue();
+		for (Map.Entry<String, Integer> frequency : entrtSet) {
+			if (maxValue < frequency.getValue()) {
+				maxValue = frequency.getValue();
+			}
+		}
+		Set<String> keys = this.getKeys(occurenceMap, maxValue);
+
+		return keys;
+	}
+
+	public Set<String> getKeys(Map<String, Integer> map, int val) {
+		return map.entrySet().stream().filter(entry -> Objects.equals(entry.getValue(), val)).map(ent -> ent.getKey())
+				.collect(Collectors.toSet());
+
+	}
 
 }

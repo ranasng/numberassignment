@@ -2,6 +2,7 @@ package assignment;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class Assignment {
 
@@ -21,7 +22,8 @@ public class Assignment {
 		System.out.println("================================================");
 		ln.findLargestNumberWithoutSort(numberList);
 		System.out.println("================================================");
-		System.out.println("Number of Occurrence in String: " + occurrenceCount.occurrenceCount(str));
+		Map<String,Integer> strMap=occurrenceCount.occurrenceCount(str);
+		System.out.println("Number of Occurrence in String: " + strMap);
 		System.out.println("===================Sort Employee Objects=========================");
 		List<Employee> empList = Arrays.asList(new Employee(3, "Rana", 30), new Employee(1, "Singha", 25),
 				new Employee(5, "Arun", 35), new Employee(4, "Sourav", 20), new Employee(7, "Debu", 55),
@@ -33,6 +35,8 @@ public class Assignment {
 		System.out.println(occurrenceCount.getCaseInsensitiveValue("A"));
 		System.out.println(occurrenceCount.getCaseInsensitiveValue("b"));
 		System.out.println(occurrenceCount.getCaseInsensitiveValue("Z"));
+		System.out.println("===================Most Frequent Words=========================");
+		System.out.println(occurrenceCount.frequentWord(strMap));
 
 	}
 
